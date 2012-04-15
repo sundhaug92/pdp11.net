@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Processor\Basic11Processor.cs" />
+    <Compile Include="Processor\Exceptions\opCodeNotImplemented.cs" />
+    <Compile Include="Processor\opCodes\opCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

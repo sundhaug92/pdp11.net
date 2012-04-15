@@ -5,7 +5,7 @@ using System.Text;
 
 namespace libpdp11net.Processor.Exceptions
 {
-    class opCodeNotImplemented
+    internal class opCodeNotImplemented : Exception
     {
     }
 }

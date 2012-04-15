@@ -11,16 +11,28 @@ namespace libpdp11net.Processor
     {
         ushort[] Register = new ushort[8];
         Thread RunningThread;
-        List<opCodes.opCode> opCodes = new List<opCodes.opCode>();
+        List<opCodes.opCode> installedOpCodes = new List<opCodes.opCode>();
 
         public Basic11Processor()
         {
             RunningThread = new Thread(Run);
+            InstallOpcode(new opCodes.Basic.DoubleOperand.ADD());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.BIC());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.BICB());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.BIS());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.BISB());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.BIT());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.BITB());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.CMP());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.CMPB());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.MOV());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.MOVB());
+            InstallOpcode(new opCodes.Basic.DoubleOperand.SUB());
         }
 
         public void InstallOpcode(opCodes.opCode o)
         {
-            opCodes.Add(o);
+            installedOpCodes.Add(o);
         }
 
         public void Step()
@@ -28,7 +40,7 @@ namespace libpdp11net.Processor
             //Add interrupt request testing here
             //Add instruction decoding and execution here
             ushort opcode = readFromPhys16(Register[7]);
-            foreach (opCodes.opCode o in opCodes)
+            foreach (opCodes.opCode o in installedOpCodes)
             {
                 if ((opcode & o.Mask) == (o.Mask & o.Match))
                 {

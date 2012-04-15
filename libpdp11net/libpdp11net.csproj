@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="Processor\Basic11Processor.cs" />
     <Compile Include="Processor\Exceptions\opCodeNotImplemented.cs" />
-    <Compile Include="Processor\opCodes\Basic\DoubleOperand.cs" />
     <Compile Include="Processor\opCodes\Basic\DoubleOperand\ADD.cs" />
     <Compile Include="Processor\opCodes\Basic\DoubleOperand\BIC.cs" />
     <Compile Include="Processor\opCodes\Basic\DoubleOperand\BICB.cs" />
@@ -54,12 +53,12 @@
     <Compile Include="Processor\opCodes\Basic\DoubleOperand\MOV.cs" />
     <Compile Include="Processor\opCodes\Basic\DoubleOperand\MOVB.cs" />
     <Compile Include="Processor\opCodes\Basic\DoubleOperand\SUB.cs" />
-    <Compile Include="Processor\opCodes\InstructionSet.cs" />
     <Compile Include="Processor\opCodes\opCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Device\Generic\" />
+    <Folder Include="Processor\opCodes\microCode\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

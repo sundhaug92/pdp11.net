@@ -44,6 +44,7 @@ namespace libpdp11net.Processor
             {
                 if ((opcode & o.Mask) == (o.Mask & o.Match))
                 {
+                    o.Exec(this);
                     return;
                 }
             }

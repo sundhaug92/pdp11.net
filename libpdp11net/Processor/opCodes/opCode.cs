@@ -8,8 +8,9 @@ namespace libpdp11net.Processor.opCodes
     internal class opCode
     {
         ushort _Mask = 0, _Match = 1; //Set match, so that it won't match with the mask by default
+        ushort _Length = 0;
 
-        public void Exec(ref Basic11Processor Processor)
+        public void Exec(Basic11Processor Processor)
         {
             throw new NotImplementedException();
         }
@@ -27,6 +28,14 @@ namespace libpdp11net.Processor.opCodes
             get
             {
                 return _Match;
+            }
+        }
+
+        public ushort Length
+        {
+            get
+            {
+                return _Length;
             }
         }
     }

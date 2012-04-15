@@ -12,6 +12,16 @@ namespace debug11
     {
         private static void Main(string[] args)
         {
+            Basic11Processor Processor = new Basic11Processor();
+            while (true)
+            {
+                Console.Write("DEBUG> ");
+                string consoleInput = Console.ReadLine();
+                string[] splitConsoleInput = consoleInput.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                splitConsoleInput[0] = splitConsoleInput[0].ToLower();
+
+                if ((splitConsoleInput[0] == "exit") || (splitConsoleInput[0] == "quit")) break;
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace libpdp11net.Processor.opCode
+namespace libpdp11net.Processor.opCodes
 {
     internal class opCode
     {

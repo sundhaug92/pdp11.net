@@ -5,7 +5,7 @@ using System.Text;
 
 namespace libpdp11net.Processor.opCodes.Basic.DoubleOperand
 {
-    class BITB
+    internal class BITB : opCode.opCode
     {
     }
 }

@@ -18,6 +18,11 @@ namespace libpdp11net.Processor
             RunningThread = new Thread(Run);
         }
 
+        public void InstallOpcode(opCode.opCode o)
+        {
+            opCodes.Add(o);
+        }
+
         public void Step()
         {
             //Add interrupt request testing here

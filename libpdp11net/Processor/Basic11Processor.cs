@@ -20,6 +20,16 @@ namespace libpdp11net.Processor
         {
             //Add interrupt request testing here
             //Add instruction decoding and execution here
+            switch ((readFromPhys16(Register[7]) >> 12) & 7)
+            {
+                default:
+                    throw new NotImplementedException();
+            }
+        }
+
+        private int readFromPhys16(ushort p)
+        {
+            throw new NotImplementedException();
         }
 
         public void Run() //Worker - Run PDP 11 code

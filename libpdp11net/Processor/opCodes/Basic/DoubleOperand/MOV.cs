@@ -5,7 +5,7 @@ using System.Text;
 
 namespace libpdp11net.Processor.opCodes.Basic.DoubleOperand
 {
-    internal class MOV : opCode.opCode
+    internal class MOV : opCodes.opCode
     {
     }
 }

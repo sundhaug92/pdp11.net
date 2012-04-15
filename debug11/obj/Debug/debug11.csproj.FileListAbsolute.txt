@@ -1,0 +1,8 @@
+c:\users\martin\documents\visual studio 11\Projects\libpdp11net\debug11\bin\Debug\debug11.exe.config
+c:\users\martin\documents\visual studio 11\Projects\libpdp11net\debug11\bin\Debug\debug11.exe
+c:\users\martin\documents\visual studio 11\Projects\libpdp11net\debug11\bin\Debug\debug11.pdb
+c:\users\martin\documents\visual studio 11\Projects\libpdp11net\debug11\bin\Debug\libpdp11net.dll
+c:\users\martin\documents\visual studio 11\Projects\libpdp11net\debug11\bin\Debug\libpdp11net.pdb
+c:\users\martin\documents\visual studio 11\Projects\libpdp11net\debug11\obj\Debug\debug11.csprojResolveAssemblyReference.cache
+c:\users\martin\documents\visual studio 11\Projects\libpdp11net\debug11\obj\Debug\debug11.exe
+c:\users\martin\documents\visual studio 11\Projects\libpdp11net\debug11\obj\Debug\debug11.pdb

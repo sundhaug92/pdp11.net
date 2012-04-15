@@ -18,19 +18,21 @@ namespace libpdp11net.Processor
 
         public void Step()
         {
+            //Add interrupt request testing here
+            //Add instruction decoding and execution here
         }
 
-        public void Run()
+        public void Run() //Worker - Run PDP 11 code
         {
             while (true) Step();
         }
 
-        public void Start()
+        public void Start() //Start worker
         {
             if (!RunningThread.IsAlive) RunningThread.Start();
         }
 
-        public void Stop()
+        public void Stop() //Abort worker
         {
             if (RunningThread.IsAlive) RunningThread.Abort();
         }

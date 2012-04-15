@@ -5,7 +5,7 @@ using System.Text;
 
 namespace libpdp11net.Processor.opCodes
 {
-    internal class opCode
+    public class opCode
     {
         ushort _Mask = 0, _Match = 1; //Set match, so that it won't match with the mask by default
         ushort _Length = 0;

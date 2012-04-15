@@ -7,7 +7,7 @@ using libpdp11net.Processor.Exceptions;
 
 namespace libpdp11net.Processor
 {
-    internal class Basic11Processor
+    public class Basic11Processor
     {
         ushort[] Register = new ushort[8];
         Thread RunningThread;

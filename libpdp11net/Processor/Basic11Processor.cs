@@ -9,7 +9,7 @@ namespace libpdp11net.Processor
 {
     public class Basic11Processor
     {
-        ushort[] Register = new ushort[8];
+        public ushort[] Register = new ushort[8];
         Thread RunningThread;
         List<opCodes.opCode> installedOpCodes = new List<opCodes.opCode>();
 

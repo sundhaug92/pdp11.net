@@ -71,6 +71,11 @@ namespace debug11
                     }
                     Processor.Run();
                 }
+                if (splitConsoleInput[0] == "step")
+                {
+                    if (splitConsoleInput.Count() > 1) for (int i = 0; i < fromOctal(splitConsoleInput[1]); i++) Processor.Step();
+                    else Processor.Step();
+                }
             }
         }
     }

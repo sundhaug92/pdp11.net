@@ -65,16 +65,25 @@ namespace debug11
                 }
                 if ((splitConsoleInput[0] == "go") || (splitConsoleInput[0] == "run"))
                 {
-                    if (splitConsoleInput.Count() > 1)
-                    {
-                        Processor.Register[7] = fromOctal(splitConsoleInput[1]);
-                    }
+                    if (splitConsoleInput.Count() > 1) Processor.Register[7] = fromOctal(splitConsoleInput[1]);
                     Processor.Run();
                 }
                 if (splitConsoleInput[0] == "step")
                 {
                     if (splitConsoleInput.Count() > 1) for (int i = 0; i < fromOctal(splitConsoleInput[1]); i++) Processor.Step();
                     else Processor.Step();
+                }
+                if (splitConsoleInput[0] == "trace")
+                {
+                    if (splitConsoleInput.Count() > 1) Processor.Register[7] = fromOctal(splitConsoleInput[1]);
+                    while (true)
+                    {
+                        for (int i = 0; i < 8; i++)
+                        {
+                            Console.Write("R" + i.ToString() + "=" + toOctal(Processor.Register[i]) + '\t'.ToString());
+                        }
+                        Processor.Step();
+                    }
                 }
             }
         }

@@ -63,6 +63,14 @@ namespace debug11
                         Processor.Register[fromOctal(splitConsoleInput[1])] = fromOctal(Console.ReadLine());
                     }
                 }
+                if ((splitConsoleInput[0] == "go") || (splitConsoleInput[0] == "run"))
+                {
+                    if (splitConsoleInput.Count() > 1)
+                    {
+                        Processor.Register[7] = fromOctal(splitConsoleInput[1]);
+                    }
+                    Processor.Run();
+                }
             }
         }
     }

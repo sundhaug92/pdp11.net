@@ -14,7 +14,7 @@ namespace debug11
         {
             string s = "", s2 = "";
             ushort u_ = u;
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 6; i++)
             {
                 s += (u_ % 8).ToString();
                 u_ /= 8;
@@ -24,6 +24,19 @@ namespace debug11
                 s2 += c;
             }
             return s2;
+        }
+
+        private static ushort fromOctal(string s)
+        {
+            ushort u = 0;
+
+            foreach (char c in s)
+            {
+                u *= 8;
+                u += ushort.Parse(c.ToString());
+            }
+
+            return u;
         }
 
         private static void Main(string[] args)
@@ -41,9 +54,14 @@ namespace debug11
                 {
                     for (int i = 0; i < 8; i++)
                     {
-                        Console.Write(i.ToString() + ": " + toOctal(Processor.Register[i]) + '\t'.ToString());
+                        Console.Write("R" + i.ToString() + "=" + toOctal(Processor.Register[i]) + '\t'.ToString());
                     }
                     Console.WriteLine();
+                    if (splitConsoleInput.Count() > 1)
+                    {
+                        Console.Write("R" + splitConsoleInput[1] + "=");
+                        Processor.Register[fromOctal(splitConsoleInput[1])] = fromOctal(Console.ReadLine());
+                    }
                 }
             }
         }

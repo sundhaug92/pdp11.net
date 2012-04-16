@@ -16,6 +16,50 @@ namespace libpdp11net.Processor
         public Basic11Processor()
         {
             RunningThread = new Thread(Run);
+            ISInstallBasic();
+        }
+
+        #region Instruction-set installation
+
+        #region Basic instruction-set installation
+
+        private void ISInstallBasic()
+        {
+            ISInstallBasicDoubleOperands();
+            ISInstallBasicSingleOperands();
+            ISInstallBasicConditionalBranch();
+            ISInstallBasicJumpAndSR();
+            ISInstallBasicMisc();
+            ISInstallBasicConditionCode();
+        }
+
+        private void ISInstallBasicConditionCode()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ISInstallBasicMisc()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ISInstallBasicJumpAndSR()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ISInstallBasicConditionalBranch()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ISInstallBasicSingleOperands()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ISInstallBasicDoubleOperands()
+        {
             InstallOpcode(new opCodes.Basic.DoubleOperand.ADD());
             InstallOpcode(new opCodes.Basic.DoubleOperand.BIC());
             InstallOpcode(new opCodes.Basic.DoubleOperand.BICB());
@@ -30,10 +74,14 @@ namespace libpdp11net.Processor
             InstallOpcode(new opCodes.Basic.DoubleOperand.SUB());
         }
 
+        #endregion Basic instruction-set installation
+
         public void InstallOpcode(opCodes.opCode o)
         {
             installedOpCodes.Add(o);
         }
+
+        #endregion Instruction-set installation
 
         public void Step()
         {
